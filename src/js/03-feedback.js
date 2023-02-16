@@ -43,5 +43,7 @@ const formData = {};
 function onFormInput(event) {
 formData[event.target.name] = event.target.value;
 
+console.log(formData);
+
 localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
 }
