@@ -14,12 +14,12 @@ const player = new Player(iframe);
 
 const timeValue = function(event) {localStorage.setItem("videoplayer-current-time", JSON.stringify(event.seconds))}
 
-    player.on('timeupdate', throttle(timeValue, 1000));
+    player.on('timeupdate', throttle(timeValue, 500));
    
 let savedTime = Number(localStorage.getItem("videoplayer-current-time"));
 
 
-player.setCurrentTime(savedTime).then(function(seconds) {
+player.setCurrentTime(savedTime || 0).then(function(seconds) {
 
 }).catch(function(error) {
     switch (error.name) {
