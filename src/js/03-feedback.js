@@ -8,6 +8,8 @@ const refs = {
     form: document.querySelector('.feedback-form')
 };
 
+let formData = {};
+
 // refs.email.addEventListener('input', onEmailInput);
 // refs.message.addEventListener('input', throttle(onTextareaInput, 500));
 
@@ -31,6 +33,7 @@ function onGetDataStorage() {
         const keys = Object.keys(savedData);
         keys.map(element => {
             document.querySelector(`[name='${element}']`).value = savedData[element];
+            // formData.keys = savedData[element];
         });
     }
 }
@@ -38,7 +41,7 @@ function onGetDataStorage() {
 
 refs.form.addEventListener('input', throttle(onFormInput, 500));
 
-const formData = {};
+
 
 function onFormInput(event) {
 formData[event.target.name] = event.target.value;
