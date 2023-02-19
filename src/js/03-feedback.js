@@ -7,7 +7,7 @@ const refs = {
 };
 
 let formData = {};
-
+let savedData = {}
 refs.form.addEventListener('submit', onFormSubmit);
 
 onGetDataStorage();
@@ -23,7 +23,7 @@ function onFormSubmit(event) {
 }
 
 function onGetDataStorage() {
-    const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
     console.log(savedData);
 
     if(savedData) {
